@@ -1,24 +1,24 @@
-import { Logo } from './logo'
+import { Logo } from "./logo";
 
 const cols = [
   {
-    title: 'Producto',
+    title: "Producto",
     links: [
-      { label: 'El problema', href: '#problema' },
-      { label: 'Cómo funciona', href: '#como-funciona' },
-      { label: 'Servicios', href: '#servicios' },
-      { label: 'Ficha técnica', href: '#ficha-tecnica' },
+      { label: "El problema", href: "#problema" },
+      { label: "Cómo funciona", href: "#como-funciona" },
+      { label: "Servicios", href: "#servicios" },
+      { label: "Ficha técnica", href: "#ficha-tecnica" },
     ],
   },
   {
-    title: 'Empresa',
+    title: "Empresa",
     links: [
-      { label: 'Por qué SafeMind', href: '#por-que' },
-      { label: 'Sectores', href: '#sectores' },
-      { label: 'Contacto', href: '#contacto' },
+      { label: "Por qué SafeMind", href: "#por-que" },
+      { label: "Sectores", href: "#sectores" },
+      { label: "Contacto", href: "#contacto" },
     ],
   },
-]
+];
 
 export function Footer() {
   return (
@@ -26,7 +26,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
-            <Logo />
+            <Logo className="h-12 w-44.5" sizes="178px" />
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               Sistema de detección de personas por inteligencia artificial para
               maquinaria pesada y vehículos industriales. Procesamiento local,
@@ -70,5 +70,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

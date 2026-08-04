@@ -36,7 +36,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="shrink-0" aria-label="Proyectos 3 inicio">
-          <Logo />
+          <Logo className="h-10 w-37.25" priority />
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">

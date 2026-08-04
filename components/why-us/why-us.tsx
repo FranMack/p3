@@ -55,7 +55,7 @@ const stats = [
 
 export function WhyUs() {
   return (
-    <section id="por-que" className="relative bg-navy-deep py-20 md:py-28">
+    <section id="por-que" className="relative  py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Por qué SafeMind"
@@ -76,7 +76,7 @@ export function WhyUs() {
           ))}
         </Reveal>
 
-        <div className="mt-8 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 overflow-hidden border border-border sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r, i) => (
             <Reveal
               key={r.title}

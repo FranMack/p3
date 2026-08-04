@@ -91,28 +91,29 @@ function PillarText({
   const Icon = pillar.icon;
   return (
     <div className="flex flex-col gap-5">
-      <div
-        className={cn(
-          "flex items-center justify-center border border-border bg-navy-deep text-warn clip-corner",
-          compact ? "size-11" : "size-16",
-        )}
-      >
-        <Icon className={compact ? "size-5" : "size-7"} />
-      </div>
-      {!compact && (
-        <div>
-          <h3 className="font-display text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
-            {pillar.title}
-          </h3>
-          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+      {!compact ? (
+        <div className="space-y-3">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex size-11 shrink-0 items-center justify-center border border-border bg-navy-deep text-warn clip-corner sm:size-12 md:size-16">
+              <Icon className="size-5 md:size-7" />
+            </div>
+            <h3 className="min-w-0 font-display text-xl font-bold uppercase tracking-wide text-foreground sm:text-2xl md:text-3xl">
+              {pillar.title}
+            </h3>
+          </div>
+          <p className="text-lg leading-relaxed text-muted-foreground ">
             {pillar.text}
           </p>
         </div>
-      )}
-      {compact && (
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {pillar.text}
-        </p>
+      ) : (
+        <div className="space-y-3">
+          <div className="flex size-11 items-center justify-center border border-border bg-navy-deep text-warn clip-corner">
+            <Icon className="size-5" />
+          </div>
+          <p className="text-sm leading-relaxed text-foreground">
+            {pillar.text}
+          </p>
+        </div>
       )}
       <ul className="flex flex-col gap-2.5 border-t border-border/60 pt-4">
         {pillar.points.map((pt) => (
@@ -138,7 +139,7 @@ function PillarVisual({
     <div className="flex flex-col items-center gap-3">
       <div
         className={cn(
-          "clip-corner relative w-full overflow-hidden border border-border bg-navy-soft",
+          "clip-corner relative w-full overflow-hidden ",
           compact ? "aspect-16/10" : "aspect-4/5 md:aspect-16/11",
         )}
       >
@@ -149,7 +150,7 @@ function PillarVisual({
           sizes={compact ? "100vw" : "(min-width: 1024px) 40vw, 100vw"}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-navy-deep/70 via-navy-deep/10 to-transparent" />
         {isDetection && (
           <>
             <ScanLine />
@@ -200,9 +201,10 @@ export function Services() {
   }, [active]);
 
   return (
-    <section id="servicios" className="relative bg-navy-deep py-20 md:py-28">
+    <section id="servicios" className="relative py-20 md:py-28 bg-navy">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          titleColor="text-foreground"
           eyebrow="Qué ofrecemos"
           title="Una solución completa, de punta a punta"
           description="SafeMind no es solo software. Es hardware industrial, IA a bordo, registro en la nube y soporte en campo integrados en un mismo sistema."

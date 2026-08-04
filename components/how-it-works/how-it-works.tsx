@@ -321,10 +321,11 @@ export function HowItWorks() {
   return (
     <section
       id="como-funciona"
-      className="relative border-y border-border bg-navy py-20 md:py-28 lg:py-36"
+      className="relative  bg-navy py-20 md:py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+        titleColor="text-foreground"
           eyebrow="Cómo funciona"
           title="Del entorno al registro, en milisegundos"
           description="Un flujo continuo que convierte lo que ven las cámaras en decisiones de seguridad accionables para el operador."

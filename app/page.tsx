@@ -19,17 +19,16 @@ import { WhyUs } from "@/components/why-us/why-us";
 
 export default function Page() {
   return (
-    <div className="min-h-svh bg-navy-deep">
+    <div className="min-h-svh bg-alert-foreground ">
       <Navbar />
       <main>
         <Hero />
         <AboutUs />
         <Problem />
-        <Sectors />
         <Services />
-        <HowItWorks />
-        <Gallery />
         <Vehicles />
+        <Gallery />
+        <Sectors />
         <WhyUs />
         <Contact />
       </main>

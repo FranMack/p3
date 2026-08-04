@@ -1,8 +1,9 @@
 "use client";
 
 import { Cpu, Handshake, MapPinned, Quote, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import argMap from "../../public/images/map.png";
-import { Counter, Reveal } from "../custom-ui/reveal";
+import { Reveal } from "../custom-ui/reveal";
 import { SectionHeading } from "../custom-ui/section-heading";
 
 // TODO: reemplazar con info real de la empresa (año de fundación, cantidad de
@@ -37,10 +38,7 @@ const values = [
 
 export function AboutUs() {
   return (
-    <section
-      id="quienes-somos"
-      className="relative border-y border-border bg-co py-20 md:py-28"
-    >
+    <section id="quienes-somos" className="relative py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Text column */}
@@ -53,7 +51,7 @@ export function AboutUs() {
 
             <Reveal
               delay={0.1}
-              className="mt-8 flex gap-4 border-l-2 border-warn bg-navy-deep/60 p-6"
+              className="mt-8 flex gap-4 border-l-2 border-warn bg-navy-soft p-6"
             >
               <Quote className="size-6 shrink-0 text-warn" />
               <p className="text-base italic leading-relaxed text-pretty text-foreground/90">
@@ -67,33 +65,24 @@ export function AboutUs() {
 
           {/* Stylized map column: Argentina silhouette with Neuquén pin */}
           <Reveal delay={0.15} className="relative">
-            <div className="relative aspect-4/5 overflow-hidden border border-border bg-navy-deep clip-diagonal-b sm:aspect-5/4 lg:aspect-4/5">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_30%,var(--color-navy-soft)_0%,transparent_60%)]" />
+            <div className="relative aspect-4/5 overflow-hidden   clip-diagonal-b sm:aspect-5/4 lg:aspect-4/5">
+              <div className="absolute inset-0 " />
 
-              <img
-                src={argMap.src}
+              <Image
+                src={argMap}
                 alt="Mapa de Argentina con Neuquén destacado"
-                className="absolute inset-0 size-full object-cover opacity-90"
-                crossOrigin="anonymous"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover opacity-90"
               />
-
-          
-
-              
-              <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-steel">
-                <span className="size-2 animate-pulse rounded-full bg-warn" />
-                Origen de operaciones
-              </div>
             </div>
-
-          
           </Reveal>
         </div>
 
         {/* Stat band */}
-        <Reveal className="mt-14 bg-navy-soft grid grid-cols-2 gap-px overflow-hidden  lg:grid-cols-4">
+        {/*<Reveal className="mt-14  grid grid-cols-2 gap-px overflow-hidden  lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="bg-navy-deep p-6 text-center sm:p-8">
+            <div key={s.label} className=" p-6 text-center sm:p-8">
               <div className="font-display text-3xl font-bold text-warn sm:text-4xl">
                 {s.kind === "year" && (
                   // TODO: reemplazar con el año real de fundación
@@ -108,14 +97,12 @@ export function AboutUs() {
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-sm leading-snug text-muted-foreground">
+              <p className="mt-2 text-sm leading-snug text-navy">
                 {s.label}
               </p>
             </div>
           ))}
-        </Reveal>
-
-    
+        </Reveal>*/}
       </div>
     </section>
   );

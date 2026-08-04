@@ -22,32 +22,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/40" />
 
         {/* Live detection overlays drawn over the scene */}
-        <motion.div
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          <div className="relative mx-auto h-full max-w-7xl">
-            <DetectionBox
-              label="PERSONA"
-              confidence={98}
-              variant="warn"
-              pulse
-              className="right-[10%] top-[46%] h-[34%] w-[13%] sm:right-[14%] sm:w-[10%]"
-            />
-            <DetectionBox
-              label="MAQUINARIA"
-              confidence={94}
-              variant="scan"
-              className="right-[24%] top-[30%] hidden h-[45%] w-[42%] md:block"
-            />
-          </div>
-          {/* scan sweep line */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-            <div className="absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-warn/15 to-transparent animate-scan" />
-          </div>
-        </motion.div>
+      
 
         {/* HUD corner + REC indicator */}
         <div className="absolute right-4 top-24 flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-steel sm:right-8">

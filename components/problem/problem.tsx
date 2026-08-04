@@ -35,7 +35,7 @@ export function Problem() {
   const inView = useInView(imgRef, { once: true, margin: "-120px" });
 
   return (
-    <section id="problema" className="relative bg-navy py-20 md:py-28">
+    <section id="problema" className="relative py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
         <div className="order-2 lg:order-1">
           <SectionHeading
@@ -43,7 +43,7 @@ export function Problem() {
             title={<>Lo que el ojo humano no llega a ver</>}
             description="En obra, minería o campo petrolero, la seguridad depende de reaccionar a tiempo. SafeMind cubre lo que los espejos y la atención humana no pueden."
           />
-          <div className="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+          <div className="mt-10 grid gap-3 overflow-hidden border border-border  sm:grid-cols-2">
             {problems.map((p, i) => (
               <Reveal
                 key={p.title}
