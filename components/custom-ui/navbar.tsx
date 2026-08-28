@@ -7,11 +7,11 @@ import { Logo } from "./logo";
 
 const links = [
   { href: "#quienes-somos", label: "Quiénes somos" },
-  { href: "#problema", label: "El problema" },
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#servicios", label: "Servicios" },
+   { href: "#galeria", label: "Galería" },
   { href: "#ficha-tecnica", label: "Ficha técnica" },
-  { href: "#sectores", label: "Sectores" },
+ { href: "#contacto", label: "Contacto" },
 ];
 
 export function Navbar() {
@@ -52,14 +52,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="#contacto"
-            className="inline-flex h-10 items-center justify-center bg-warn px-5 text-sm font-semibold text-warn-foreground transition-colors hover:bg-warn/90 clip-corner"
-          >
-            Solicitar demo
-          </a>
-        </div>
+        
 
         <button
           type="button"
@@ -96,15 +89,6 @@ export function Navbar() {
               </a>
             </li>
           ))}
-          <li className="mt-2">
-            <a
-              href="#contacto"
-              onClick={() => setOpen(false)}
-              className="block bg-warn px-3 py-3 text-center text-sm font-semibold text-warn-foreground clip-corner"
-            >
-              Solicitar demo
-            </a>
-          </li>
         </ul>
       </div>
     </header>

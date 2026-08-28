@@ -6,7 +6,7 @@ import { SectionHeading } from "../custom-ui/section-heading";
 
 const items = [
   {
-    src: "/images/camera-install.png",
+    src: "/images/install-field.png",
     title: "Cámara IP PoE instalada",
     caption: "5MP · IP67 · visión nocturna infrarroja",
   },
@@ -16,12 +16,13 @@ const items = [
     caption: 'Pantalla 10,1" con warna visual y sonora',
   },
   {
-    src: "/images/dashboard.png",
+    src: "/images/laptop-dashboard.png",
     title: "Plataforma web",
     caption: "Historial, mapa GPS y estadísticas",
   },
   {
-    src: "/images/install-field.png",
+    
+    src: "/images/service.webp",
     title: "Instalación en campo",
     caption: "Calibración y validación funcional",
   },
@@ -66,7 +67,7 @@ export function Gallery() {
   }, [lightboxIndex]);
 
   return (
-    <section className="relative  py-20 md:py-28 bg-foreground">
+    <section id="galeria" className="relative  py-20 md:py-28 bg-foreground">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
@@ -120,7 +121,7 @@ export function Gallery() {
                 <span className="absolute right-3 top-3 size-3 border-r-2 border-t-2 border-steel" />
               </button>
               <figcaption className="mt-4">
-                <h3 className="font-display text-base font-semibold uppercase tracking-wide text-foreground">
+                <h3 className="font-display text-base font-semibold uppercase tracking-wide text-navy">
                   {it.title}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">

@@ -14,7 +14,6 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BoundingBox, ScanLine } from "../custom-ui/bounding-box";
 import { Reveal } from "../custom-ui/reveal";
 import { SectionHeading } from "../custom-ui/section-heading";
 
@@ -29,7 +28,7 @@ const pillars = [
       "2 zonas configurables",
       "Alcance hasta 25 m",
     ],
-    image: "/images/night-worker.png",
+    image: "/images/service-1.webp",
     alt: "Trabajador detectado por la IA con bounding box en tiempo real",
     caption: "DETECCIÓN ACTIVA · <40MS",
   },
@@ -151,26 +150,6 @@ function PillarVisual({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-t from-navy-deep/70 via-navy-deep/10 to-transparent" />
-        {isDetection && (
-          <>
-            <ScanLine />
-            <BoundingBox
-              x={20}
-              y={8}
-              w={58}
-              h={80}
-              label="PERSON"
-              confidence={0.97}
-              delay={280}
-            />
-          </>
-        )}
-        <div className="pointer-events-none absolute inset-0">
-          <span className="absolute left-1.5 top-1.5 h-3 w-3 border-l border-t border-warn/30" />
-          <span className="absolute right-1.5 top-1.5 h-3 w-3 border-r border-t border-warn/30" />
-          <span className="absolute bottom-1.5 left-1.5 h-3 w-3 border-b border-l border-warn/30" />
-          <span className="absolute bottom-1.5 right-1.5 h-3 w-3 border-b border-r border-warn/30" />
-        </div>
       </div>
       <p className="font-mono text-[10px] tracking-widest text-warn/60">
         {pillar.caption}
@@ -191,9 +170,9 @@ export function Services() {
     setActive((prev) => (prev - 1 + pillars.length) % pillars.length);
   const goNext = () => setActive((prev) => (prev + 1) % pillars.length);
 
-  // Auto-advance every AUTO_ADVANCE_MS; restarts whenever `active` changes,
-  // so manual navigation (tabs or arrows) resets the countdown.
+  // Auto-advance only on desktop (lg+); restarts whenever `active` changes.
   useEffect(() => {
+    if (!window.matchMedia("(min-width: 1024px)").matches) return;
     const id = setTimeout(() => {
       setActive((prev) => (prev + 1) % pillars.length);
     }, AUTO_ADVANCE_MS);

@@ -1,4 +1,5 @@
-import { Analytics } from "@vercel/analytics/next";
+//import { Analytics } from "@vercel/analytics/next";
+import { JsonLd } from "@/components/jsonLd";
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -15,11 +16,22 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const isStaging = process.env.NEXT_PUBLIC_IS_STAGING === "true";
+const isProd = !isStaging;
+const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://safemind.ar";
+const TITLE = "SafeMind® | Detección de Personas por IA para Maquinaria Pesada";
+const DESCRIPTION =
+  "Sistema de detección de personas por inteligencia artificial para maquinaria pesada y vehículos industriales. Detección en tiempo real con YOLOv8, procesamiento local e instalación no invasiva. +100 equipos operativos en minería, construcción y petróleo.";
+const OG_IMAGE = `${DOMAIN}/og-image.jpg`;
+
 export const metadata: Metadata = {
-  title: "SafeMind® — Detección de personas por IA para maquinaria pesada",
-  description:
-    "SafeMind es un sistema de detección de personas por inteligencia artificial para maquinaria pesada y vehículos industriales. Detección en tiempo real con YOLOv8, procesamiento local, instalación no invasiva. +100 equipos operativos en minería, construcción y petróleo.",
-  generator: "v0.app",
+  metadataBase: new URL(DOMAIN),
+
+  title: {
+    default: TITLE,
+    template: "%s | SafeMind®",
+  },
+  description: DESCRIPTION,
   keywords: [
     "detección de personas",
     "seguridad industrial",
@@ -29,19 +41,65 @@ export const metadata: Metadata = {
     "minería",
     "construcción",
     "petróleo",
+    "oil and gas",
     "SafeMind",
-    "Proyectos 3",
+    "prevención de accidentes",
+    "visión artificial",
+    "seguridad vial industrial",
+    "Argentina",
   ],
-  // Sitio de prueba: no debe indexarse hasta que se confirme el deploy definitivo
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-    },
+
+  robots: isProd
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      }
+    : {
+        index: false,
+        follow: false,
+        noarchive: true,
+        nosnippet: true,
+      },
+
+  alternates: isProd ? { canonical: DOMAIN } : undefined,
+
+  authors: [{ name: "SafeMind®", url: DOMAIN }],
+  creator: "SafeMind®",
+  publisher: "SafeMind®",
+
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: DOMAIN,
+    siteName: "SafeMind®",
+    locale: "es_AR",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "SafeMind® - Detección de Personas por IA para Maquinaria Pesada",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+
+  icons: {
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -62,9 +120,12 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${spaceGrotesk.variable} bg-background`}
     >
+      <head>
+        <JsonLd domain={DOMAIN} />
+      </head>
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === "production" && <Analytics />}
+        {/*process.env.NODE_ENV === "production" && <Analytics />*/}
       </body>
     </html>
   );
