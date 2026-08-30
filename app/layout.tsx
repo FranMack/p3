@@ -18,10 +18,11 @@ const spaceGrotesk = Space_Grotesk({
 
 const isStaging = process.env.NEXT_PUBLIC_IS_STAGING === "true";
 const isProd = !isStaging;
-const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://safemind.ar";
-const TITLE = "SafeMind® | Detección de Personas por IA para Maquinaria Pesada";
+const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://proyectos3.com.ar";
+
+const TITLE = "Proyectos 3: Detección de Personas por IA para Maquinaria Pesada";
 const DESCRIPTION =
-  "Sistema de detección de personas por inteligencia artificial para maquinaria pesada y vehículos industriales. Detección en tiempo real con YOLOv8, procesamiento local e instalación no invasiva. +100 equipos operativos en minería, construcción y petróleo.";
+  "Proyectos 3 desarrolla SafeMind®, sistema de detección de personas por IA para maquinaria pesada. Funciona sin conectividad, instalación no invasiva y +100 equipos operativos en minería, construcción y petróleo.";
 const OG_IMAGE = `${DOMAIN}/og-image.jpg`;
 
 export const metadata: Metadata = {
@@ -29,25 +30,26 @@ export const metadata: Metadata = {
 
   title: {
     default: TITLE,
-    template: "%s | SafeMind®",
+    template: "%s | Proyectos 3",
   },
   description: DESCRIPTION,
   keywords: [
-    "detección de personas",
-    "seguridad industrial",
-    "maquinaria pesada",
-    "inteligencia artificial",
-    "YOLOv8",
-    "minería",
-    "construcción",
-    "petróleo",
-    "oil and gas",
-    "SafeMind",
-    "prevención de accidentes",
-    "visión artificial",
-    "seguridad vial industrial",
-    "Argentina",
-  ],
+  "Proyectos 3",
+  "SafeMind",
+  "sistema de detección de personas",
+  "detección de personas maquinaria pesada",
+  "seguridad industrial",
+  "seguridad para maquinaria pesada",
+  "inteligencia artificial industrial",
+  "visión artificial industrial",
+  "YOLOv8",
+  "minería",
+  "construcción",
+  "petróleo",
+  "oil and gas",
+  "prevención de accidentes laborales",
+  "seguridad vial industrial",
+],
 
   robots: isProd
     ? {
@@ -70,15 +72,16 @@ export const metadata: Metadata = {
 
   alternates: isProd ? { canonical: DOMAIN } : undefined,
 
-  authors: [{ name: "SafeMind®", url: DOMAIN }],
-  creator: "SafeMind®",
-  publisher: "SafeMind®",
+  authors: [{ name: "Proyectos 3", url: DOMAIN }],
+  creator: "Proyectos 3",
+  publisher: "Proyectos 3",
+  applicationName: "Proyectos 3",
 
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
     url: DOMAIN,
-    siteName: "SafeMind®",
+    siteName: "Proyectos 3",
     locale: "es_AR",
     type: "website",
     images: [
@@ -86,7 +89,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "SafeMind® - Detección de Personas por IA para Maquinaria Pesada",
+        alt: "SafeMind by Proyectos 3 - Detección de Personas por IA para Maquinaria Pesada",
       },
     ],
   },

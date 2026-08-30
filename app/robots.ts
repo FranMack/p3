@@ -1,11 +1,15 @@
 import type { MetadataRoute } from "next";
 
-// Sitio de prueba: bloquear todos los crawlers hasta el deploy definitivo
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN!;
+
   return {
-    rules: {
-      userAgent: "*",
-      disallow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

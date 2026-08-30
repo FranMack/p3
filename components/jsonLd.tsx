@@ -7,7 +7,7 @@ export function JsonLd({ domain }: { domain: string }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "SafeMind®",
+            name: "Proyectos 3",
             url: domain,
           }),
         }}
@@ -19,7 +19,7 @@ export function JsonLd({ domain }: { domain: string }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "SafeMind®",
+            name: "Proyectos 3",
             url: domain,
 
             logo: {
@@ -43,7 +43,7 @@ export function JsonLd({ domain }: { domain: string }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "SafeMind®",
+            name: "Proyectos 3",
             url: domain,
             applicationCategory: "BusinessApplication",
             operatingSystem: "Embedded Linux",
