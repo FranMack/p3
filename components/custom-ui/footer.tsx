@@ -2,20 +2,23 @@ import { Logo } from "./logo";
 
 const cols = [
   {
-    title: "Producto",
+    title: "Navegación",
     links: [
-      { label: "El problema", href: "#problema" },
+      { label: "Quiénes somos", href: "#quienes-somos" },
       { label: "Cómo funciona", href: "#como-funciona" },
       { label: "Servicios", href: "#servicios" },
+      { label: "Galería", href: "#galeria" },
       { label: "Ficha técnica", href: "#ficha-tecnica" },
+      { label: "Contacto", href: "#contacto" },
     ],
   },
   {
-    title: "Empresa",
+    title: "Contacto",
     links: [
-      { label: "Por qué SafeMind", href: "#por-que" },
-      { label: "Sectores", href: "#sectores" },
-      { label: "Contacto", href: "#contacto" },
+      { label: "Teléfono", href: "tel:+5491100000000" },
+      { label: "Email", href: "mailto:info@proseind.com" },
+      { label: "WhatsApp", href: "https://wa.me/5491100000000" },
+      { label: "Cobertura", href: "#contacto" },
     ],
   },
 ];
@@ -48,6 +51,9 @@ export function Footer() {
                   <li key={l.href}>
                     <a
                       href={l.href}
+                      {...(l.href.startsWith("http")
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {l.label}
@@ -61,8 +67,8 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-6 sm:flex-row sm:items-center">
           <p className="text-xs text-steel-muted">
-            © {new Date().getFullYear()} SafeMind® · Proyectos 3. Todos los
-            derechos reservados.
+            © {new Date().getFullYear()} Proyectos 3. Todos los derechos
+            reservados.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-brand text-steel-muted">
             Sistema de detección de personas · IA a bordo
