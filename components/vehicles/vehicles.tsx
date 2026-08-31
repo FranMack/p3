@@ -2,16 +2,16 @@ import { SectionHeading } from "../custom-ui/section-heading";
 import { VehicleCard } from "./vehicle-card";
 
 const items = [
-  { img: "/images/vehicles/veh-excavator.jpg", name: "Excavadoras" },
-  { img: "/images/vehicles/veh-backhoe.jpg", name: "Retroexcavadoras" },
-  { img: "/images/vehicles/veh-dumper.jpg", name: "Camiones fuera de ruta" },
-  { img: "/images/vehicles/veh-truck.jpg", name: "Camiones de carga" },
-  { img: "/images/vehicles/veh-loader.jpg", name: "Palas cargadoras" },
-  { img: "/images/vehicles/veh-grader.jpg", name: "Motoniveladoras" },
-  { img: "/images/vehicles/veh-crane.jpg", name: "Grúas" },
-  { img: "/images/vehicles/veh-dozer.jpg", name: "Topadoras" },
-  { img: "/images/vehicles/veh-roller.jpg", name: "Compactadoras" },
-  { img: "/images/vehicles/veh-forklift.jpg", name: "Autoelevadores" },
+  { img: "/images/vehicles2/excavadora.webp", name: "Excavadoras" },
+  { img: "/images/vehicles2/retropala.webp", name: "Retroexcavadoras" },
+  { img: "/images/vehicles2/camion-volcador.webp", name: "Camiones volcadores" },
+  { img: "/images/vehicles2/camion.webp", name: "Camiones de carga" },
+  { img: "/images/vehicles2/pala-frontal.webp", name: "Palas cargadoras" },
+  { img: "/images/vehicles2/motoniveladora.webp", name: "Motoniveladoras" },
+  { img: "/images/vehicles2/veh-crane.jpg", name: "Grúas" },
+  { img: "/images/vehicles2/veh-dozer.jpg", name: "Topadoras" },
+  { img: "/images/vehicles2/compactador.webp", name: "Compactadoras" },
+  { img: "/images/vehicles2/veh-forklift.jpg", name: "Autoelevadores" },
 ];
 
 export function Vehicles() {
