@@ -1,4 +1,4 @@
-import { AboutUs } from "@/components/about-us/aboutUs";
+import { AboutUs } from "@/components/about-us";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/custom-ui/footer";
 import { Gallery } from "@/components/gallery/gallery";

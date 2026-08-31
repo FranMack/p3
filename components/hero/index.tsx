@@ -17,18 +17,18 @@ export function Hero() {
           fill
           priority
           aria-hidden="true"
-          className="object-cover"
+          className="object-cover object-[50%_8%] scale-[1.22] md:hidden"
+        />
+        <Image
+          src="/images/hero-excavator.png"
+          alt=""
+          fill
+          priority
+          aria-hidden="true"
+          className="hidden object-cover md:block md:object-center"
         />
         <div className="absolute inset-0 bg-linear-to-r from-navy-deep via-navy-deep/85 to-navy-deep/30" />
         <div className="absolute inset-0 bg-linear-to-t from-navy-deep via-transparent to-navy-deep/40" />
-
-        {/* Live detection overlays drawn over the scene */}
-
-        {/* HUD corner + REC indicator */}
-        <div className="absolute right-4 top-24 flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-steel sm:right-8">
-          <span className="size-2 animate-pulse rounded-full bg-warn" />
-          REC · IA ACTIVA
-        </div>
       </div>
       <HeroContent />
     </section>

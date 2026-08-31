@@ -1,8 +1,8 @@
 "use client";
 
+import { useIsVisible } from "@/app/hooks/use-is-visible";
 import Image from "next/image";
 import { SectorProps } from ".";
-import { Reveal } from "../custom-ui/reveal";
 
 interface SectorCardProps {
   sector: SectorProps;
@@ -10,11 +10,16 @@ interface SectorCardProps {
 }
 
 export const SectorCard = ({ sector, index }: SectorCardProps) => {
+  const [ref, isVisible] = useIsVisible(0.5);
+
   return (
-    <Reveal
+    <div
+      ref={ref}
       key={sector.name}
-      delay={index * 0.08}
-      className="group relative aspect-square sm:aspect-3/4 overflow-hidden border border-border"
+      style={{ transitionDelay: `${index * 100}ms` }}
+      className={`group relative aspect-square overflow-hidden border border-border transition-all duration-700 ease-out sm:aspect-3/4 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
     >
       <Image
         src={sector.src || "/placeholder.svg"}
@@ -47,6 +52,6 @@ export const SectorCard = ({ sector, index }: SectorCardProps) => {
           {sector.text}
         </p>
       </div>
-    </Reveal>
+    </div>
   );
 };

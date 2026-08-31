@@ -1,10 +1,9 @@
 "use client";
 
-import { Cpu, Handshake, MapPinned, Quote, ShieldCheck } from "lucide-react";
-import Image from "next/image";
-import argMap from "../../public/images/map.png";
-import { Reveal } from "../custom-ui/reveal";
+import { Cpu, Handshake, MapPinned, ShieldCheck } from "lucide-react";
 import { SectionHeading } from "../custom-ui/section-heading";
+import { AboutMap } from "./about-map";
+import { AboutQuote } from "./about-quote";
 
 // TODO: reemplazar con info real de la empresa (año de fundación, cantidad de
 // equipos si no coincide con la cifra ya usada en "Clients", y alcance geográfico)
@@ -49,34 +48,11 @@ export function AboutUs() {
               description="Proyectos 3 es una empresa de base tecnológica nacida en Neuquén, en el corazón de la actividad petrolera, gasífera y minera de Argentina. Desarrollamos soluciones de inteligencia artificial pensadas para el terreno: para la maquinaria real, en las condiciones reales de operación de la industria pesada."
             />
 
-            <Reveal
-              delay={0.1}
-              className="mt-8 flex gap-4 border-l-2 border-warn bg-navy-soft p-6"
-            >
-              <Quote className="size-6 shrink-0 text-warn" />
-              <p className="text-base italic leading-relaxed text-pretty text-foreground/90">
-                Creemos que la tecnología tiene que bajar al campo, no quedarse
-                en la oficina. Por eso diseñamos sistemas como SafeMind pensando
-                primero en el operador y en la operación, y después en el
-                software.
-              </p>
-            </Reveal>
+            <AboutQuote />
           </div>
 
           {/* Stylized map column: Argentina silhouette with Neuquén pin */}
-          <Reveal delay={0.15} className="relative">
-            <div className="relative aspect-4/5 overflow-hidden   clip-diagonal-b sm:aspect-5/4 lg:aspect-4/5">
-              <div className="absolute inset-0 " />
-
-              <Image
-                src={argMap}
-                alt="Mapa de Argentina con Neuquén destacado"
-                fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover opacity-90"
-              />
-            </div>
-          </Reveal>
+          <AboutMap />
         </div>
 
         {/* Stat band */}
@@ -107,3 +83,6 @@ export function AboutUs() {
     </section>
   );
 }
+
+export { AboutMap } from "./about-map";
+export { AboutQuote } from "./about-quote";

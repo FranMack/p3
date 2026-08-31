@@ -1,5 +1,6 @@
+"use client";
+import { useIsVisible } from "@/app/hooks/use-is-visible";
 import { cn } from "@/lib/utils";
-import { Reveal } from "./reveal";
 
 export function SectionHeading({
   eyebrow,
@@ -20,10 +21,13 @@ export function SectionHeading({
   descriptionColor?: string;
   className?: string;
 }) {
+  const [ref, isVisible] = useIsVisible(0.25);
   return (
-    <Reveal
+    <div
+      ref={ref}
       className={cn(
-        "flex max-w-2xl flex-col gap-4",
+        "flex max-w-2xl flex-col gap-4 transition-all duration-700 ease-out",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
         align === "center" && "mx-auto items-center text-center",
         className,
       )}
@@ -57,6 +61,6 @@ export function SectionHeading({
           {description}
         </p>
       )}
-    </Reveal>
+    </div>
   );
 }

@@ -1,8 +1,14 @@
+"use client";
+import { useIsVisible } from "@/app/hooks/use-is-visible";
 import Image from "next/image";
 
 export const ProblemImage = () => {
+  const [ref, isVisible] = useIsVisible(0.5);
   return (
-    <div className="order-1 lg:order-2">
+    <div
+      ref={ref}
+      className={`order-1 lg:order-2 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"} transition-all duration-700 ease-out `}
+    >
       <div className="relative aspect-4/5 overflow-hidden border border-border clip-diagonal-b">
         <Image
           src="/images/the-problem.webp"

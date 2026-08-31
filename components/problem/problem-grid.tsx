@@ -33,9 +33,9 @@ const problems: ProblemCardProps[] = [
 
 export const ProblemGrid = () => {
   return (
-    <div className="mt-10 grid gap-3 overflow-hidden border border-border  sm:grid-cols-2">
+    <div className="mt-10 grid gap-3 overflow-hidden sm:grid-cols-2">
       {problems.map((p, i) => (
-        <ProblemCard key={i} problem={p} />
+        <ProblemCard key={i} problem={p} index={i} /> 
       ))}
     </div>
   );
