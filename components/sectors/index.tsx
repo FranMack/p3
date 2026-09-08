@@ -24,7 +24,7 @@ const sectors: SectorProps[] = [
     text: "Equipos de gran porte en operaciones a cielo abierto y condiciones extremas.",
   },
   {
-    src: "/images/vehicles/veh-forklift.jpg",
+    src: "/images/vehicles2/veh-forklift.jpg",
     name: "Logística",
     text: "Montacargas y camiones circulando junto a personal en depósitos, puertos y centros de distribución.",
   },

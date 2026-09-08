@@ -13,7 +13,7 @@ const items = [
   {
     src: "/images/monitor-cabin.png",
     title: "Monitor en cabina",
-    caption: 'Pantalla 10,1" con warna visual y sonora',
+    caption: 'Pantalla 10,1" con advertencia visual y sonora',
   },
   {
     src: "/images/laptop-dashboard.png",

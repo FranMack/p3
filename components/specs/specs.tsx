@@ -45,7 +45,7 @@ const groups: Group[] = [
       ["Motor de IA", "Red neuronal convolucional YOLOv8"],
       [
         "Zonas",
-        "2 independientes: advertencia (warna progresiva) y alarma (grabación + alarma continua)",
+        "2 independientes: advertencia (advertencia progresiva) y alarma (grabación + alarma continua)",
       ],
     ],
   },
@@ -62,10 +62,10 @@ const groups: Group[] = [
   {
     category: "Monitor",
     icon: MonitorPlay,
-    summary: '10,1" HDMI · warnas visuales y sonoras',
+    summary: '10,1" HDMI · advertencias visuales y sonoras',
     rows: [
       ["Pantalla", '10,1" HDMI con parlantes integrados'],
-      ["warnas", "Visual y sonora diferenciada por nivel de riesgo"],
+      ["advertencias", "Visual y sonora diferenciada por nivel de riesgo"],
     ],
   },
   {
