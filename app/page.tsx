@@ -11,6 +11,7 @@ import { WhatsappButton } from "@/components/custom-ui/whatsapp-button";
 import { Sectors } from "@/components/sectors";
 
 import { Services } from "@/components/services/services";
+import { TrustedBy } from "@/components/trusted-by";
 import { Vehicles } from "@/components/vehicles/vehicles";
 import { WhyUs } from "@/components/why-us";
 
@@ -26,6 +27,7 @@ export default function Page() {
         <Vehicles />
         <Gallery />
         <Sectors />
+        <TrustedBy />
         <WhyUs />
         <Contact />
       </main>
